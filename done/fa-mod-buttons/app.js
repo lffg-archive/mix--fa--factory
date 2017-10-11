@@ -64,6 +64,8 @@
         throw new Error ('Não foi especificado um valor: ' + value + ' para o script de botões de moderação.');
       }
     });
+
+    self.createStyles();
   };
 
   ModButtons.prototype.init = function () {
@@ -259,7 +261,7 @@
     $.each(buttons, function () {
       var self = this;
 
-      (new FA.Topic.ModButtons(self)).init().createStyles();
+      (new FA.Topic.ModButtons(self)).init();
     });
   });
 }(jQuery));
