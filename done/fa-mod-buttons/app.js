@@ -257,7 +257,7 @@
     }).appendTo('head');
   };
 
-  $(function () {
+  $(window).on('load', function () {
     $.each(buttons, function () {
       var self = this;
 
