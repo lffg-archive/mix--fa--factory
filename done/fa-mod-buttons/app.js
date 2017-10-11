@@ -26,18 +26,18 @@
       inGroup     : false,
       onlyForAdmin: false,
       children    : [
-        { name: 'Ação 1', text: 'Texto da ação 1.', img : 'https://i.imgur.com/oAGWDdG.png' },
-        { name: 'Ação 2', text: 'Texto da ação 2.', img : 'https://i.imgur.com/oAGWDdG.png' },
-        { name: 'Ação 3', text: 'Texto da ação 3.', img : 'https://i.imgur.com/oAGWDdG.png' }
+        { name: 'Ação 1', text: 'Texto da ação 1.', icon: 'fa fa-cog' },
+        { name: 'Ação 2', text: 'Texto da ação 2.', icon: 'fa fa-cog' },
+        { name: 'Ação 3', text: 'Texto da ação 3.', icon: 'fa fa-cog' }
       ]
     }
   ];
 
   window.FA = window.FA || {};
-  FA.Topics = FA.Topics || {};
+  FA.Topic = FA.Topic || {};
 
   var ModButtons;
-  FA.Topics.ModButtons = ModButtons = function (userConfig) {
+  FA.Topic.ModButtons = ModButtons = function (userConfig) {
     var self = this;
 
     self.userConfig = userConfig;
@@ -111,7 +111,7 @@
     
     self.$group = $('.sceditor-group:last');
     self.$element = $('<a>', {
-      'class'       : 'sceditor-button fa-mod-buttons-prototype-listen',
+      'class'       : 'sceditor-button',
       'unselectable': 'on',
       'title'       : self.config.name,
       'data-id'     : self.config.id,
@@ -120,18 +120,37 @@
 
     switch (isDrop) {
       case true:
-        self.$element
-          .attr('data-dropdown', 'true')
-        ;
+        self.$element.attr('data-dropdown', 'true');
 
-        var dropdownId = self.createChildren();
+        self.createChildren();
+        self.documentListen();
+
+        self.$element.on('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+
+          var $this = $(this);
+
+          var offset = $this.offset();
+          var height = $this.height();
+
+          self.$dropdown
+            .css('position', 'absolute')
+            .css('top', offset.top + height)
+            .css('left', offset.left)
+            .toggle()
+          ;
+        });
         
         break;
 
       case false:
         self.$element
           .attr('data-dropdown', 'false')
-          .attr('data-text', self.config.text)
+            .attr('data-text', self.config.text)
+              .on('click', function (event) {
+                self.insertText($(this), event);
+              })
         ;
         
         break;
@@ -139,46 +158,108 @@
 
     if (self.config.inGroup) {
       self.$group.append(self.$element);
-    } else {
-      $('<div>', { 'class': 'sceditor-group' })
-        .insertBefore(self.$group)
-          .append(self.$element)
-      ;
-    }
 
-    self.listen(isDrop);
-    console.log(self.end());
+      return;
+    }
+    
+    $('<div>', { 'class': 'sceditor-group' })
+      .insertBefore(self.$group)
+        .append(self.$element)
+    ;
   };
   
   ModButtons.prototype.createChildren = function () {
+    var self = this;
     
+    self.$dropdown = $('<div>', { 'class': 'sceditor-dropdown fa-mod-buttons-prototype-dropdown' });
+    
+    $.each(self.config.children, function (index, child) {
+      $('<a>', {
+        'data-text': child.text,
+        'title'    : child.name,
+        'html'     : [
+          $('<i>', { 'class': child.icon }).prop('outerHTML'),
+          $('<span>', { 'text': child.name }).prop('outerHTML')
+        ].join('\n')
+      })
+        .appendTo(self.$dropdown)
+          .on('click', function (event) {
+            self.insertText($(this), event);
+
+            self.$dropdown.hide();
+          })
+      ;
+    });
+
+    self.$dropdown
+      .hide()
+        .appendTo('body')
+    ;
   };
 
-  ModButtons.prototype.listen = function () {
-    $('.fa-mod-buttons-prototype-listen').on('click', function (event) {
-      event.preventDefault();
+  /**
+   * @param {string} text - Corresponde ao texto que será inserido no editor.
+   */
+  ModButtons.prototype.insertText = function (context, contextEvent) {
+    contextEvent.preventDefault();
+    contextEvent.stopPropagation();
+
+    var $this = $(context);
+
+    var $textarea = $('#text_editor_textarea');
+    var $sceditor = $textarea.sceditor('instance');
+
+    $sceditor.insertText($this.attr('data-text'));
+  };
+
+  ModButtons.prototype.documentListen = function () {
+    var self = this;
+    
+    self.$dropdown.on('click', function (event) {
       event.stopPropagation();
-
-      var $this = $(this);
-
-      var $textarea = $('#text_editor_textarea');
-      var $sceditor = $textarea.sceditor('instance');
-
-      $sceditor.insertText($this.attr('data-text'));
+    });
+    
+    $(document).on('click', function (event) {
+      self.$dropdown.hide();
     });
   };
 
-  ModButtons.prototype.end = function () {
-    var self = this;
-    
-    return 'Botão cujo nome é: `' + self.config.name + '` criado com sucesso.';
+  ModButtons.prototype.createStyles = function () {
+    $('<style>', {
+      'text': [
+        '.fa-mod-buttons-prototype-dropdown {',
+        '  padding: 0px !important;',
+        '  margin-top: 5px !important;',
+        '  min-width: 120px;',
+        '  max-height: 200px;',
+        '  overflow-y: auto;',
+        '}',
+        '',
+        '.fa-mod-buttons-prototype-dropdown > a {',
+        '  display: block;',
+        '  padding: 8px 10px;',
+        '  border-bottom: solid 1px #ddd;',
+        '  font-size: 10px;',
+        '  cursor: pointer;',
+        '}',
+        '',
+        '.fa-mod-buttons-prototype-dropdown > a:last-child {',
+        '  border-bottom: none;',
+        '}',
+        '',
+        '.fa-mod-buttons-prototype-dropdown > a > i {',
+        '  font-size: 12px;',
+        '  vertical-align: middle;',
+        '}'
+      ].join('\n')
+    }).appendTo('head');
   };
 
   $(function () {
     $.each(buttons, function () {
       var self = this;
 
-      (new FA.Topics.ModButtons(self)).init();
+      (new FA.Topic.ModButtons(self)).init().createStyles();
     });
   });
 }(jQuery));
