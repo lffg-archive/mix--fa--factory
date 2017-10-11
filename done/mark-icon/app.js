@@ -3,9 +3,8 @@
 /**
  * Alterar o ícone do tópico com AJAX.
  *
- * @author lffg {@link https://github.com/lffg}
+ * @author lffg <https://github.com/lffg>
  * @version 1.2
- * @licence MIT
  */
  
 (function ($) {
