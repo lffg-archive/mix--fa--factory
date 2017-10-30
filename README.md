@@ -9,6 +9,3 @@ Versionamento _Git_.
 |-----------|:---------------------------------------------------------------------:|:------------------------------------------:|:-------------------------------------------------------:|:----------------------------------------------------:|
 | Diretório |                                 _done_                                |                _in-progress_               |                        _revision_                       |                        _trash_                       |
 |    Uso    | Local de destino para tutoriais publicados ou que aguardam publicação | Local onde estão os tutoriais em produção. | Local de revisão de tutoriais com erros e/ou defasados. | Local de destino para tutoriais que foram removidos. |
-
-
-<div align="center">© Fórum dos Fóruns</div>
