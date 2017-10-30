@@ -1,6 +1,6 @@
 # Fábrica de Tutoriais do [Fórum dos Fóruns](http://ajuda.forumeiros.com/)
 
-Este repositório contém os tutoriais recentes da Fábrica de Tutoriais do [Fórum dos Fóruns](http://ajuda.forumeiros.com/).
+Este repositório contém os tutoriais recentes da Fábrica de Tutoriais do [Fórum dos Fóruns](http://ajuda.forumeiros.com/).  
 Versionamento _Git_.
 
 ### Lista de Diretórios:
