@@ -12,7 +12,7 @@ _Projeto em Curso._
 
 ## Modelo básico para a criação de arquivos
 
-Os novos tutoriais à serem analisados pelos moderadores da fábrica devem ser propostos no diretório ***[propostas](https://github.com/Forumeiros/Factory/tree/master/propostas)***.  
+Os novos tutoriais à serem analisados pelos moderadores da fábrica devem ser propostos no diretório _**[propostas](https://github.com/Forumeiros/Factory/tree/master/propostas)**_.  
 Os outros diretórios ficam à cargo da moderação da fábrica.
 
 ## Mais informações
