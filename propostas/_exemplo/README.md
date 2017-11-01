@@ -25,4 +25,5 @@ Informações do tutorial.
 
 ---
 
-Créditos e informações adicionais.```
+Créditos e informações adicionais.
+```
