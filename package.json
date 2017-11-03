@@ -8,25 +8,21 @@
     "forumeiros",
     "tutorials"
   ],
-  "maintainers": [
-    {
-      "name": "Equipe do Fórum dos Fóruns",
-      "email": "suporte@shiftactif.org",
-      "web": "http://ajuda.forumeiros.com/forum"
-    }
-  ],
+  "maintainers": [{
+    "name": "Equipe do Fórum dos Fóruns",
+    "email": "suporte@shiftactif.org",
+    "web": "http://ajuda.forumeiros.com/forum"
+  }],
   "dependencies": {
     "jquery": "3.2.1"
   },
   "bugs": {
     "web": "https://github.com/Forumeiros/Factory/issues"
   },
-  "licenses": [
-    {
-      "name": "MIT",
-      "url": "https://github.com/Forumeiros/Factory/blob/master/LICENSE"
-    }
-  ],
+  "licenses": [{
+    "name": "MIT",
+    "url": "https://github.com/Forumeiros/Factory/blob/master/LICENSE"
+  }],
   "homepage": "https://forumeiros.github.io/Factory/",
   "private": true
 }
