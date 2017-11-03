@@ -1,0 +1,32 @@
+{
+  "name": "factory",
+  "description": "Fábrica de Tutoriais para o Fórum dos Fóruns",
+  "version": "1.0.0",
+  "keywords": [
+    "forumactif",
+    "forumotion",
+    "forumeiros",
+    "tutorials"
+  ],
+  "maintainers": [
+    {
+      "name": "Equipe do Fórum dos Fóruns",
+      "email": "suporte@shiftactif.org",
+      "web": "http://ajuda.forumeiros.com/forum"
+    }
+  ],
+  "dependencies": {
+    "jquery": "3.2.1"
+  },
+  "bugs": {
+    "web": "https://github.com/Forumeiros/Factory/issues"
+  },
+  "licenses": [
+    {
+      "name": "MIT",
+      "url": "https://github.com/Forumeiros/Factory/blob/master/LICENSE"
+    }
+  ],
+  "homepage": "https://forumeiros.github.io/Factory/",
+  "private": true
+}
