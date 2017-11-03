@@ -1,7 +1,8 @@
 # Fábrica de Tutoriais do [Fórum dos Fóruns](http://ajuda.forumeiros.com/)
 
 Repositório pertencente à Fábrica de Tutoriais do Fórum dos Fóruns.  
-_Projeto em Curso._
+
+### [Antes de criar um tutorial, leia _esta_ documentação](https://github.com/Forumeiros/Factory/wiki/Como-propor-um-tutorial)
 
 ## Lista de diretórios
 
