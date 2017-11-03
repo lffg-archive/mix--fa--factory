@@ -2,7 +2,8 @@
 
 Repositório pertencente à Fábrica de Tutoriais do Fórum dos Fóruns.  
 
-### [Antes de criar um tutorial, leia _esta_ documentação](https://github.com/Forumeiros/Factory/wiki/Como-propor-um-tutorial)
+### [Antes de propor um tutorial, leia _esta_ documentação](https://github.com/Forumeiros/Factory/wiki/Como-propor-um-tutorial)
+### [Clique _aqui_ para criar um novo tutorial](https://github.com/Forumeiros/Factory/new/master/propostas)
 
 ## Lista de diretórios
 
