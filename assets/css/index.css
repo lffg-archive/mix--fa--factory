@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+body {
+  font-size: 17px;
+  font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Ubuntu", "Arial", sans-serif;
+  line-height: 1.5;
+  background-color: #fff;
+  color: #212121;
+}
