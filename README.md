@@ -15,6 +15,8 @@ _Projeto em Curso._
 Os novos tutoriais à serem analisados pelos moderadores da fábrica devem ser propostos no diretório _**[propostas](https://github.com/Forumeiros/Factory/tree/master/propostas)**_.  
 Os outros diretórios ficam à cargo da moderação da fábrica.
 
+Leia **[esta documentação](https://github.com/Forumeiros/Factory/wiki/Como-propor-um-tutorial)** antes de propor um novo tutorial.
+
 ## Mais informações
 
 Este projeto ainda está em desenvolvimento.
