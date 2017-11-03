@@ -10,14 +10,15 @@
   ],
   "maintainers": [{
     "name": "Equipe do Fórum dos Fóruns",
-    "email": "suporte@shiftactif.org",
-    "web": "http://ajuda.forumeiros.com/forum"
+    "web": "http://ajuda.forumeiros.com/forum",
+    "email": "suporte@shiftactif.org"
   }],
   "dependencies": {
     "jquery": "3.2.1"
   },
   "bugs": {
-    "web": "https://github.com/Forumeiros/Factory/issues"
+    "web": "https://github.com/Forumeiros/Factory/issues",
+    "email": "suporte@shiftactif.org"
   },
   "licenses": [{
     "name": "MIT",
