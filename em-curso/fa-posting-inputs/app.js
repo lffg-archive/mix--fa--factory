@@ -51,7 +51,7 @@
   Inputs.prototype.init = function () {
     var self = this;
 
-    if (!$('input[type="subject"]')) {
+    if (!$.sceditor) {
       return false;
     }
 
@@ -102,8 +102,6 @@
   };
 
   Inputs.prototype.listen = function (fn) {
-    var self = this;
-
     var selectors = [
       '[required]',
       '[required="required"]',
@@ -121,11 +119,6 @@
 
   Inputs.prototype.parse = function () {
     var self = this;
-
-    if (!$.sceditor) {
-      alert('[Input\'s Script] Fatal Error. [Error Code: 001]');
-      return false;
-    }
 
     var $sceditor = $('#text_editor_textarea').sceditor('instance');
 
