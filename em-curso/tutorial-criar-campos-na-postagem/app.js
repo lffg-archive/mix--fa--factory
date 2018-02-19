@@ -7,7 +7,7 @@
  * @version 1.0
  */
 
-(function ($) {
+(function($) {
   'use strict';
 
   var inputs = [{
@@ -32,7 +32,7 @@
   FA.Posting = FA.Posting || {};
 
   var Inputs;
-  FA.Posting.Inputs = Inputs = function (userConfig) {
+  FA.Posting.Inputs = Inputs = function(userConfig) {
     var self = this;
     
     self.defaults = {
@@ -48,7 +48,7 @@
     self.config = $.extend({}, self.defaults, self.userConfig);
   };
 
-  Inputs.prototype.init = function () {
+  Inputs.prototype.init = function() {
     var self = this;
 
     if (!$.sceditor) {
@@ -64,12 +64,12 @@
     }
 
     self.generate();
-    self.listen(function () {
+    self.listen(function() {
       self.parse();
     });
   };
 
-  Inputs.prototype.generate = function () {
+  Inputs.prototype.generate = function() {
     var self = this;
 
     self.$wrapper = $([
@@ -101,14 +101,14 @@
     ;
   };
 
-  Inputs.prototype.listen = function (fn) {
+  Inputs.prototype.listen = function(fn) {
     var selectors = [
       '[required]',
       '[required="required"]',
       '[name="subject"]'
     ];
 
-    $('[type="submit"]').on('click', function () {
+    $('[type="submit"]').on('click', function() {
       if ($(selectors.join(',')).val() === '') {
         return;
       }
@@ -117,7 +117,7 @@
     });
   };
 
-  Inputs.prototype.parse = function () {
+  Inputs.prototype.parse = function() {
     var self = this;
 
     var $sceditor = $('#text_editor_textarea').sceditor('instance');
@@ -130,8 +130,8 @@
     $sceditor.val(content + $sceditor.val());
   };
 
-  $(function () {
-    $.each(inputs, function () {
+  $(function() {
+    $.each(inputs, function() {
       var self = this;
 
       (new FA.Posting.Inputs(self)).init();
